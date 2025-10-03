@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# 仮想環境
+venv/
+
+# OS関連
+.DS_Store
+Thumbs.db
+
+# ログ
+*.log
+
+# static/mp3 の一時ファイルは無視
+static/output_*.mp3
