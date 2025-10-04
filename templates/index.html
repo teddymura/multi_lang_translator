@@ -7,68 +7,132 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { 
-      background-color: #f0f4f8; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
-      font-size: 1.1rem; /* 全体文字サイズアップ */
+      font-size: 1.25rem;
+      padding: 20px 15px;
     }
+    
     h1 { 
-      color: #1e3a8a; 
+      color: #ffffff; 
       font-weight: bold; 
-      font-size: 2rem; /* 見出し大きく */
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
     }
     
     /* 入力・結果カード風 */
     .card-input, .card-output {
       background-color: #ffffff;
-      border-radius: 12px;
-      padding: 20px; /* 少し余白広め */
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-bottom: 25px;
     }
 
     textarea { 
-      border-radius: 8px; 
-      font-size: 1rem; /* テキスト少し大きめ */
+      border-radius: 10px; 
+      font-size: 1.2rem;
+      padding: 15px;
+      border: 2px solid #e0e7ff;
+      transition: border-color 0.3s;
     }
+    
+    textarea:focus {
+      border-color: #667eea;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
     select { 
-      border-radius: 6px; 
-      font-size: 1rem; 
+      border-radius: 10px; 
+      font-size: 1.2rem;
+      padding: 15px;
+      border: 2px solid #e0e7ff;
+      background-color: #ffffff;
     }
 
     /* ボタン */
     #translateBtn {
-      background: linear-gradient(to right, #4f46e5, #3b82f6);
+      background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
       border: none;
       color: white;
       font-weight: bold;
-      font-size: 1.2rem; /* ボタン文字大きめ */
-      padding: 14px;
-      border-radius: 10px;
-      transition: transform 0.1s, box-shadow 0.2s;
+      font-size: 1.4rem;
+      padding: 18px;
+      border-radius: 12px;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
     }
     #translateBtn:hover {
-      background: linear-gradient(to right, #4338ca, #2563eb);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background: linear-gradient(135deg, #ff5252 0%, #ff7043 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.7);
+    }
+    #translateBtn:active {
+      transform: translateY(-1px);
     }
 
     /* Audio */
-    audio { width: 100%; margin-top: 10px; border-radius: 8px; }
+    audio { 
+      width: 100%; 
+      margin-top: 15px; 
+      border-radius: 10px;
+      height: 50px;
+    }
 
     /* カードのタイトル */
     .card-title {
       font-weight: bold;
-      color: #1e40af;
-      margin-bottom: 10px;
-      font-size: 1.1rem; /* タイトル文字大きめ */
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+    
+    .form-label {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
 
-    /* スマホでも余白確保 */
+    /* スマホ最適化 */
     @media (max-width: 576px) {
-      body { padding-left: 12px; padding-right: 12px; font-size: 1rem; }
-      h1 { font-size: 1.7rem; }
-      #translateBtn { font-size: 1.1rem; padding: 12px; }
-      .card-title { font-size: 1rem; }
+      body { 
+        font-size: 1.15rem;
+        padding: 15px 10px;
+      }
+      h1 { 
+        font-size: 2rem;
+        margin-bottom: 25px;
+      }
+      #translateBtn { 
+        font-size: 1.3rem;
+        padding: 16px;
+      }
+      .card-title { 
+        font-size: 1.25rem;
+      }
+      textarea, select {
+        font-size: 1.15rem;
+        padding: 12px;
+      }
+      .card-input, .card-output {
+        padding: 20px;
+      }
+    }
+
+    /* デモ用のメッセージ */
+    .demo-message {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
     }
   </style>
 </head>
