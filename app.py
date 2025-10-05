@@ -13,7 +13,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # TTS対応言語
 SUPPORTED_TTS_LANGS = [
-    "ja", "en", "fr", "de", "es", "ko", "it", "vi", "zh-cn", "zh-tw", "id"
+    "ja", "en", "fr", "de", "es", "ko", "it", "vi", "zh-cn", "zh-tw", "id", "th" , "my" , "pt"
 ]
 
 @app.route("/")
