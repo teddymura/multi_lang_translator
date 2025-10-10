@@ -13,7 +13,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # TTS対応言語
 SUPPORTED_TTS_LANGS = [
-    "ja", "en", "fr", "de", "es", "ko", "it", "vi", "zh-cn", "zh-tw", "id", "th" , "my" , "pt"
+    "ja", "en", "fr", "de", "es", "ko", "it", "vi", "zh-cn", "zh-tw", "id", "th" , "my" , "pt", "ru", "ne", "hi"
 ]
 
 @app.route("/")
@@ -67,4 +67,4 @@ def cleanup_old_files():
             print(f"File delete error: {e}")
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5002)
